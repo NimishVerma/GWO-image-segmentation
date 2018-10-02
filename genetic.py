@@ -53,7 +53,7 @@ class GA:
                 cross_pos = np.random.randint(0, self.length)
                 # 生成掩码，方便位操作
                 mask = 0
-                for i in xrange(cross_pos):
+                for i in range(cross_pos):
                     mask |= (1 << i) 
                 male = parents[male]
                 female = parents[female]
@@ -64,7 +64,7 @@ class GA:
         self.population = parents + children
     
     def mutation(self, rate):
-        for i in xrange(len(self.population)):
+        for i in range(len(self.population)):
             if np.random.random() < rate:
                 j = np.random.randint(0, self.length - 1)
                 self.population[i] ^= 1 << j
